@@ -4,8 +4,8 @@
 A react app that tracks the progress of total COVID-19 vaccinations in the world.
 The goal is to have data visualized through choropleth maps, graphs, and tables.
 
-API (World Numbers):
-https://data.cdc.gov/resource/saz5-9hgg.json
+API (World Numbers by Country):  
+https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json
 
 ---
 ### Current Task List
