@@ -1,6 +1,6 @@
 import React from 'react'
 
-function VaccinationTable() {
+function VaccinationTable({country, data}) {
     return (
         <div>
             

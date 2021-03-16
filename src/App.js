@@ -26,7 +26,6 @@ function App() {
     setSearch(event.target.value);
   }
 
-  console.log(data);
 
   const filteredCountry = data.filter(data => 
     data.country.toLowerCase().includes(search.toLowerCase())
@@ -35,14 +34,16 @@ function App() {
 
   return (
     <div className="App">
-      {filteredCountry.map(data => {
-        return(
-          <VaccinationTable
-          country={data.country}
-          total={data.data}
-          />
-        )
-      })}
+      <div className="countryTable">
+        {filteredCountry.map(data => {
+          return(
+            <VaccinationTable
+            country={data['country']}
+            data={data['data']}
+            />
+          )
+        })}
+      </div>
     </div>
   );
 }
