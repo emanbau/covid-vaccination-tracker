@@ -38,7 +38,8 @@ function App() {
       {filteredCountry.map(data => {
         return(
           <VaccinationTable
-          
+          country={data.country}
+          total={data.data}
           />
         )
       })}
