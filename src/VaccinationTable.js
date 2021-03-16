@@ -1,7 +1,7 @@
 import React from 'react';
 import './VaccinationTable.css';
 
-function VaccinationTable({country, data}) {
+function VaccinationTable({country, data, iso}) {
 
     // Filter through data to find most recent numbers
     let total;
@@ -15,7 +15,7 @@ function VaccinationTable({country, data}) {
         }
     }
     
-    console.log(total);
+    console.log(iso);
     return (
         <div className='tableContainer'>
             

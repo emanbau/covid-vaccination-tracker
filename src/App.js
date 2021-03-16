@@ -40,6 +40,7 @@ function App() {
             <VaccinationTable
             country={data['country']}
             data={data['data']}
+            iso={data['iso_code']}
             />
           )
         })}
