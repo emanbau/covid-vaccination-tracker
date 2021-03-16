@@ -15,10 +15,9 @@ function VaccinationTable({country, data, iso}) {
         }
     }
     
-    console.log(iso);
     return (
         <div className='tableContainer'>
-            
+            <h1>{country}: {total} Vaccinations Total</h1>
         </div>
     )
 }
