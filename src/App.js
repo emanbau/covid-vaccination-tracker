@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import './VaccinationTable';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import VaccinationTable from './VaccinationTable';
@@ -22,11 +21,12 @@ function App() {
   }, [])
 
 
+  // Form Handle - Search for country
   const handleChange = event => {
     setSearch(event.target.value);
   }
 
-
+  // Filtered Search - Returns country that was searched
   const filteredCountry = data.filter(data => 
     data.country.toLowerCase().includes(search.toLowerCase())
   )
