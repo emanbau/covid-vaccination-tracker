@@ -12,7 +12,7 @@ https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinat
 - [x] Create-React-App
 - [x] Find COVID-19 Vaccination Dataset & API
 - [x] Manipulate Data (Implement sorting for most recent data)
-- [ ] Implement Search Handle
+- [x] Implement Search Handle
 - [x] Display data in a table
 - [ ] Implement Sorting/Filtering
 - [ ] Create Choropleth Map
