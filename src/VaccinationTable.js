@@ -11,8 +11,24 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
+    tableContainer: {
+        minWidth: 650,
+        maxWidth: 1000,
+    },
+
     table: {
-      minWidth: 650,
+        minWidth: 650,
+    },
+
+    headCell: {
+        paddingLeft: '5em',
+        paddingRight: '5em',
+        paddingTop: '2em',
+        paddingBottom: '2em',
+    },
+    bodyCell: {
+        paddingLeft: '5em',
+        paddingRight: '5em',
     },
   });
 
@@ -38,7 +54,7 @@ function VaccinationTable({ data }) {
         data.country.toLowerCase().includes(search.toLowerCase())
     )
 
-    // Filter through data to find most recent numbers
+    // Filters through data to find most recent numbers & pushes data into row
     filteredCountry.map(data => {
         let total;
         let countryName = data["country"];
@@ -56,13 +72,35 @@ function VaccinationTable({ data }) {
         let dataPush = createData(countryName, iso, total);
         rows.push(dataPush);
         
+        return null;
       })
 
       console.log(rows);
 
     return (
         <div className='table'>
-
+            <TableContainer component={Paper} className={classes.tableContainer}>
+                <Table className={classes.table}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell className={classes.headCell}>Country</TableCell>
+                            <TableCell className={classes.headCell} align='right'>ISO Code</TableCell>
+                            <TableCell className={classes.headCell} align='right'>Total Vaccinations</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {rows.map( element => {
+                        return(
+                            <TableRow>
+                                <TableCell className={classes.bodyCell}>{element.country}</TableCell>
+                                <TableCell className={classes.bodyCell} align='right'>{element.iso}</TableCell>
+                                <TableCell className={classes.bodyCell} align='right'>{element.totalVaccinations}</TableCell>
+                            </TableRow>
+                        )
+                    })}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </div>
     )
 }
