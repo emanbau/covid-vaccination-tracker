@@ -30,6 +30,7 @@ const useStyles = makeStyles({
         boxShadow: '0px 5px rgba(0, 0, 0, 0.2)',
         fontSize: '16px',
         textAlign: 'center',
+        outline: 'none',
     },
 
     tableContainer: {
