@@ -19,7 +19,16 @@ const useStyles = makeStyles({
     },
 
     searchbar: {
-        maxWidth: 1000,
+        display: 'block',
+        width: '100%',
+        marginTop: '2em',
+        marginBottom: '2em',
+        padding: '15px',
+        border: 'none',
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        borderRadius: '16px 16px 16px 16px',
+        boxShadow: '0px 5px rgba(0, 0, 0, 0.2)',
+        fontSize: '16px',
         textAlign: 'center',
     },
 
