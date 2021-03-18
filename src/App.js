@@ -22,11 +22,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="countryTable">
       <VaccinationTable
         data={data}
-        />
-      </div>
+      />
     </div>
   );
 }

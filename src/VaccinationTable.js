@@ -13,27 +13,40 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles({
     tableContainerDiv: {
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '100vw',
+    },
+
+    searchbar: {
+        maxWidth: 1000,
+        textAlign: 'center',
     },
 
     tableContainer: {
-        minWidth: 650,
+        minWidth: 300,
         maxWidth: 1000,
+        backgroundColor: '#2E2E2E',
+        border: '2px solid #525252'
     },
 
     table: {
-        minWidth: 650,
+        minWidth: 300,
     },
 
     headCell: {
         paddingLeft: '5em',
         paddingRight: '5em',
-        paddingTop: '2em',
-        paddingBottom: '2em',
+        paddingTop: '1.5em',
+        paddingBottom: '1.5em',
+        color: '#fbfbfb',
+        borderColor: "#525252",
     },
     bodyCell: {
         paddingLeft: '5em',
         paddingRight: '5em',
+        color: '#fbfbfb',
+        borderColor: "#525252",
     },
   });
 
@@ -52,6 +65,7 @@ function VaccinationTable({ data }) {
     // Form Handle - Search for country
     const handleChange = event => {
         setSearch(event.target.value);
+        rows = [];
     }
 
     // Filtered Search - Returns country that was searched
@@ -83,6 +97,9 @@ function VaccinationTable({ data }) {
 
     return (
         <div className={classes.tableContainerDiv}>
+            <form>
+                <input className={classes.searchbar} type='text' placeholder='Search Country' onChange={handleChange}/>
+            </form>
             <TableContainer component={Paper} className={classes.tableContainer}>
                 <Table className={classes.table}>
                     <TableHead>
