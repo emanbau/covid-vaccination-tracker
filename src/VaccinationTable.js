@@ -11,6 +11,11 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
+    tableContainerDiv: {
+        display: 'flex',
+        justifyContent: 'center',
+    },
+
     tableContainer: {
         minWidth: 650,
         maxWidth: 1000,
@@ -54,8 +59,8 @@ function VaccinationTable({ data }) {
         data.country.toLowerCase().includes(search.toLowerCase())
     )
 
-    // Filters through data to find most recent numbers & pushes data into row
-    filteredCountry.map(data => {
+    // Filters out continent data, finds most recent data, pushes data to table row
+    filteredCountry.filter(data => !data['iso_code'].includes("OWID")).map(data => { 
         let total;
         let countryName = data["country"];
         let iso = data["iso_code"];
@@ -74,11 +79,10 @@ function VaccinationTable({ data }) {
         
         return null;
       })
-
-      console.log(rows);
+    
 
     return (
-        <div className='table'>
+        <div className={classes.tableContainerDiv}>
             <TableContainer component={Paper} className={classes.tableContainer}>
                 <Table className={classes.table}>
                     <TableHead>
