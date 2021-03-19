@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import VaccinationTable from './Components/VaccinationTable';
+import ChoroplethMap from './Components/ChoroplethMap';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <ChoroplethMap/>
       <VaccinationTable
         data={data}
       />
