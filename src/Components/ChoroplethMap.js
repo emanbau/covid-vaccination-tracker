@@ -5,7 +5,7 @@ import { Marks } from './Marks';
 const width = 1000;
 const height = 500;
 
-function ChoroplethMap() {
+function ChoroplethMap({ filteredData }) {
 
     const data = [useData()];
 
@@ -17,7 +17,7 @@ function ChoroplethMap() {
 
     return (
         <svg width={width} height={height}>
-            <Marks data={data}/>
+            <Marks data={data} countryData={filteredData}/>
         </svg>
     )
 }

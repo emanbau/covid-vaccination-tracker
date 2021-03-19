@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './VaccinationTable.css';
+import './ChoroplethMap';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,6 +10,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import ChoroplethMap from './ChoroplethMap';
 
 const useStyles = makeStyles({
     tableContainerDiv: {
@@ -92,39 +94,42 @@ function VaccinationTable({ data }) {
 
         let dataPush = createData(countryName, total);
         rows.push(dataPush);
-        
+
         return null;
       })
 
-    
+    console.log(rows);
 
     return (
-        <div className={classes.tableContainerDiv}>
-            <form>
-                <input className={classes.searchbar} type='text' placeholder='Search Country' onChange={handleChange}/>
-            </form>
-            <Paper elevation={9}>
-                <TableContainer className={classes.tableContainer}>
-                    <Table className={classes.table}>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell className={classes.headCell}>Country</TableCell>
-                                <TableCell className={classes.headCell} align='left'>Total Vaccinations</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                        {rows.map( element => {
-                            return(
+        <div>
+            <ChoroplethMap filteredData={rows}/>
+            <div className={classes.tableContainerDiv}>
+                <form>
+                    <input className={classes.searchbar} type='text' placeholder='Search Country' onChange={handleChange}/>
+                </form>
+                <Paper elevation={9}>
+                    <TableContainer className={classes.tableContainer}>
+                        <Table className={classes.table}>
+                            <TableHead>
                                 <TableRow>
-                                    <TableCell className={classes.bodyCell}>{element.country}</TableCell>
-                                    <TableCell className={classes.bodyCell} align='left'>{element.totalVaccinations}</TableCell>
+                                    <TableCell className={classes.headCell}>Country</TableCell>
+                                    <TableCell className={classes.headCell} align='left'>Total Vaccinations</TableCell>
                                 </TableRow>
-                            )
-                        })}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </Paper>
+                            </TableHead>
+                            <TableBody>
+                            {rows.map( element => {
+                                return(
+                                    <TableRow>
+                                        <TableCell className={classes.bodyCell}>{element.country}</TableCell>
+                                        <TableCell className={classes.bodyCell} align='left'>{element.totalVaccinations}</TableCell>
+                                    </TableRow>
+                                )
+                            })}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Paper>
+            </div>
         </div>
     )
 }
