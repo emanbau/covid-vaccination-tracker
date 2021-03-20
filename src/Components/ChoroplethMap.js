@@ -1,6 +1,6 @@
 import React from 'react'
 import { useData } from './MapData';
-import { Marks } from './Marks';
+import Marks from './Marks';
 
 const width = 1000;
 const height = 500;
@@ -14,6 +14,7 @@ function ChoroplethMap({ filteredData }) {
             <pre>Loading...</pre>
         )
     }
+
 
     return (
         <svg width={width} height={height}>

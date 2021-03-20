@@ -98,7 +98,6 @@ function VaccinationTable({ data }) {
         return null;
       })
 
-    console.log(rows);
 
     return (
         <div>
