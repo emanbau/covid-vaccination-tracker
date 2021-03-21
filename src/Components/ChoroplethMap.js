@@ -9,6 +9,7 @@ function ChoroplethMap({ filteredData }) {
 
     const data = [useData()];
 
+    // Wait for dataset to load
     if (!data) {
         return (
             <pre>Loading...</pre>

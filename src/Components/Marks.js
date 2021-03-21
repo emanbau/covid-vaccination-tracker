@@ -4,10 +4,12 @@ const projection = geoEqualEarth()
 
 const path = geoPath(projection);
 
+// Color Key
 const colorScale = scaleThreshold()
     .domain([1000, 10000, 100000, 1000000, 10000000, 100000000])
     .range(schemeYlOrRd[7]);
 
+// Checks data for the country - sets the color on map
 const colorCheck = (feature, vaxCountryData, countryData) => {
     for (let i = 0; i < vaxCountryData.length; i++) {
         if(feature.properties.name.toLowerCase().includes(vaxCountryData[i].toLowerCase())) {
@@ -25,12 +27,13 @@ function Marks({ data, countryData}) {
 
     let vaxCountries = [];
 
+    // Match the datasets
     for (let i = 0; i < countryData.length; i++) {
         vaxCountries.push(countryData[i].country.toLowerCase());
     }
 
 
-
+    // Wait for dataset to load
     if (!data[0]) {
         return (
             <pre>Loading...</pre>
