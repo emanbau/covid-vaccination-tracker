@@ -14,7 +14,9 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         width: '100vw',
+        height: '95vh',
     },
 
     searchbar: {
@@ -33,6 +35,7 @@ const useStyles = makeStyles({
     tableContainer: {
         minWidth: 300,
         maxWidth: 500,
+        maxHeight: 750,
     },
 
     table: {

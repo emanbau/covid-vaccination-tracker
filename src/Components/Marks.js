@@ -1,4 +1,4 @@
-import { geoEqualEarth, geoPath, scaleThreshold, schemeYlOrRd } from 'd3';
+import { geoEqualEarth, geoPath, scaleThreshold,  schemePurples } from 'd3';
 
 const projection = geoEqualEarth()
 
@@ -7,7 +7,7 @@ const path = geoPath(projection);
 // Color Key
 const colorScale = scaleThreshold()
     .domain([1000, 10000, 100000, 1000000, 10000000, 100000000])
-    .range(schemeYlOrRd[7]);
+    .range(schemePurples[7]);
 
 // Checks data for the country - sets the color on map
 const colorCheck = (feature, vaxCountryData, countryData) => {

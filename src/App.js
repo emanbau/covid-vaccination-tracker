@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import VaccinationTable from './Components/VaccinationTable';
+import InformationTab from './Components/InformationTab';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <VaccinationTable
+      <InformationTab
         data={data}
       />
     </div>
