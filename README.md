@@ -11,8 +11,7 @@ API (World Numbers by Country):
 https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.json
 
 TopoJSON World Atlas:   
-https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json
-
+https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json
 ---
 ### Current Task List
 - [x] Create-React-App
