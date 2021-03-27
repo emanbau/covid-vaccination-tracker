@@ -21,7 +21,8 @@ const useStyles = makeStyles({
 
     searchbar: {
         display: 'block',
-        width: '100%',
+        minWidth: 300,
+        maxWidth: 500,
         marginTop: '2em',
         marginBottom: '2em',
         padding: '10px',
@@ -33,13 +34,13 @@ const useStyles = makeStyles({
     },
 
     tableContainer: {
-        minWidth: 300,
-        maxWidth: 500,
-        maxHeight: 750,
+        minWidth: '33vw',
+        maxWidth: '100vw',
+        maxHeight: '80vh',
     },
 
     table: {
-        minWidth: 300,
+        minWidth: '33vw',
     },
 
     headCell: {

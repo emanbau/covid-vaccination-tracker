@@ -10,6 +10,10 @@ import Tab from '@material-ui/core/Tab';
 
 
 const useStyles = makeStyles({
+    divContainer: {
+        overflow: 'hidden',
+    },
+
     paper: {
         flexGrow: 1,
     },

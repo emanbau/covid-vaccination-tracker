@@ -1,8 +1,5 @@
 import { geoEqualEarth, geoPath, scaleThreshold,  schemePurples } from 'd3';
 
-const projection = geoEqualEarth()
-
-const path = geoPath(projection);
 
 // Color Key
 const colorScale = scaleThreshold()
@@ -19,11 +16,18 @@ const colorCheck = (feature, vaxCountryData, countryData) => {
             continue;
         }
     }
-    return 'black';
+    return '#fff';
 }
 
 
-function Marks({ data, countryData}) {
+function Marks({ width, height, data, countryData}) {
+
+    // d3 projections
+    const projection = geoEqualEarth()
+        .translate([width / 2, height / 2])
+        .scale(width/5)        
+    const path = geoPath(projection);
+
 
     let vaxCountries = [];
 
@@ -42,13 +46,12 @@ function Marks({ data, countryData}) {
 
     return (
     <g className="marks">
-        <path fill='#EFEFEF' d={path({type: 'Sphere'})}/>
         {data[0].features.map((feature, i) => {
             return(
                 <path 
                 fill={colorCheck(feature, vaxCountries, countryData)}
-                stroke='#EFEFEF' 
-                stroke-width='1' 
+                stroke='white' 
+                strokeLineJoin='round' 
                 d={path(feature)}/>
             )
         })}

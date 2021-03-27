@@ -1,11 +1,34 @@
 import React from 'react'
+import { useRef, useEffect, useState } from 'react';
 import { useData } from './MapData';
 import Marks from './Marks';
+import { makeStyles } from '@material-ui/core/styles';
 
-const width = 1000;
-const height = 500;
+const useStyles = makeStyles({
+    svg: {
+        width: '95vw',
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+    },
+});
 
 function ChoroplethMap({ filteredData }) {
+
+    const classes = useStyles();
+
+    const svgRef = useRef();
+    
+    const [width, setWidth] = useState();
+    const [height, setHeight] = useState();
+
+    useEffect(() => {
+        setWidth(svgRef.current.clientWidth);
+        setHeight(svgRef.current.clientHeight);
+
+        console.log(width);
+        console.log(height);
+    }, [width, height])
 
     const data = [useData()];
 
@@ -18,8 +41,8 @@ function ChoroplethMap({ filteredData }) {
 
 
     return (
-        <svg width={width} height={height}>
-            <Marks data={data} countryData={filteredData}/>
+        <svg className={classes.svg} ref={svgRef}>
+            <Marks width={width} height={height} data={data} countryData={filteredData}/>
         </svg>
     )
 }

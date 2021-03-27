@@ -9,7 +9,8 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '95vh',
+        height: '90vh',
+        overflowX: 'hidden',
     },
 
 });
