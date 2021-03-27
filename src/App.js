@@ -3,7 +3,18 @@ import './App.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import InformationTab from './Components/InformationTab';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#9a67ea" 
+    },
+    secondary: {
+      main: "#ffcc80" 
+    }
+  },
+});
 
 function App() {
 
@@ -22,9 +33,11 @@ function App() {
 
   return (
     <div className="App">
-      <InformationTab
-        data={data}
-      />
+      <ThemeProvider theme={theme}>
+        <InformationTab
+          data={data}
+        />
+      </ThemeProvider>
     </div>
   );
 }

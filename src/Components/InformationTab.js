@@ -9,6 +9,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 
+
 const useStyles = makeStyles({
     divContainer: {
         overflow: 'hidden',
@@ -19,7 +20,9 @@ const useStyles = makeStyles({
     },
 
     tabs: {
-        height: '5vh',
+        height: '3vh',
+        display: 'flex',
+        alignItems: 'center',
     },
 
     

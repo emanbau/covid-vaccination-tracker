@@ -24,7 +24,7 @@ function Marks({ width, height, data, countryData}) {
 
     // d3 projections
     const projection = geoEqualEarth()
-        .translate([width / 2, height / 2])
+        .translate([width / 2, height / 2 + 50])
         .scale(width/5)        
     const path = geoPath(projection);
 

@@ -4,10 +4,15 @@ import { useData } from './MapData';
 import Marks from './Marks';
 import { makeStyles } from '@material-ui/core/styles';
 
+// Screen Size
+const screenWidth = window.screen.width;
+const screenHeight = window.screen.height;
+
+// Styles
 const useStyles = makeStyles({
     svg: {
-        width: '95vw',
-        height: '100%',
+        width: screenWidth,
+        height: screenHeight,
         display: 'flex',
         justifyContent: 'center',
     },
