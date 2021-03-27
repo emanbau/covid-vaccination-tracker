@@ -8,9 +8,8 @@ A react app that tracks the progress of total COVID-19 vaccinations in the world
 The goal is to have data visualized through choropleth maps, graphs, and tables.
 
 API (World Numbers by Country):  
+TopoJSON World Atlas:  
 https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json
-TopoJSON World Atlas:   
-https://cdn.jsdelivr.net/npm/world-atlas@2/countries-10m.json
 ---
 ### Current Task List
 - [x] Create-React-App
