@@ -20,5 +20,5 @@ https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json
 - [ ] Implement Sorting/Filtering
 - [x] Create Choropleth Map
 - [ ] Map Key
-- [ ] Country Click - Shows Data
+- [x] Country Hover - Shows Data
 - [ ] Create Graphs
