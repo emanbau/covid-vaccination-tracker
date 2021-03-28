@@ -46,7 +46,7 @@ function ChoroplethMap({ filteredData }) {
     // Tooltip Div Select
     const Tooltip = select(tooltipRef.current)
         .attr("class", "tooltip")
-        .style("opacity", 1)
+        .style("opacity", 0)
         .style("background-color", "#fff")
         .style("border", "solid")
         .style("border-width", "1px")
