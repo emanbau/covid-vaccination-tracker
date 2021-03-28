@@ -62,7 +62,7 @@ function ChoroplethMap({ filteredData }) {
 
     const mousemove = (event, country, numbers) => {
         Tooltip
-            .html(country + "<br>" + "Total Vaccinations: " + numbers + "</br>")
+            .html(country + "<br>Total Vaccinations: " + numbers + "</br>")
             .style("left", (pointer(event)[0]+10 + "px"))
             .style("top", (pointer(event)[1] + "px"))
     }
