@@ -1,4 +1,6 @@
 import { geoEqualEarth, geoPath, scaleThreshold,  schemePurples } from 'd3';
+import React from 'react';
+
 
 
 // Color Key
@@ -16,11 +18,24 @@ const colorCheck = (feature, vaxCountryData, countryData) => {
             continue;
         }
     }
-    return '#fff';
+    return '#eee';
+}
+
+// Returns Data for Tooltip
+const tooltipData = (feature, vaxCountryData, countryData) => {
+    for (let i = 0; i < vaxCountryData.length; i++) {
+        if(feature.properties.name.toLowerCase().includes(vaxCountryData[i].toLowerCase())) {
+            return countryData[i].totalVaccinations
+        }
+        else {
+            continue;
+        }
+    }
+    return 'No Data';
 }
 
 
-function Marks({ width, height, data, countryData}) {
+function Marks({ width, height, data, countryData, mouseover, mousemove, mouseleave}) {
 
     // d3 projections
     const projection = geoEqualEarth()
@@ -45,13 +60,19 @@ function Marks({ width, height, data, countryData}) {
     }
 
     return (
+    // Map Paths
     <g className="marks">
-        {data[0].features.map((feature, i) => {
+        {data[0].features.map((feature) => {
             return(
                 <path 
                 fill={colorCheck(feature, vaxCountries, countryData)}
                 stroke='white' 
                 strokeLineJoin='round' 
+                onMouseOver={mouseover}
+                onMouseMove={(e) => {
+                    mousemove(e, feature.properties.name, tooltipData(feature, vaxCountries, countryData))
+                }}
+                onMouseLeave={mouseleave}
                 d={path(feature)}/>
             )
         })}
