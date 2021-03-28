@@ -53,6 +53,9 @@ function ChoroplethMap({ filteredData }) {
         .style("border-radius", "2px")
         .style("padding", "5px")
         .style("position", "absolute")
+        .style("font-family", "Arial, sans-serif")
+        .style("font-weight", 300)
+        .style("font-size", "15px")
 
     
     // Tooltip Events
